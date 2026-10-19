@@ -37,10 +37,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 
     app.UseSwagger();
-    app.UseSwaggerUI();
-
-    //Al abrir http://localhost:5156 nos manda a Swagger
-    app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
+    //Swagger se muestra directo en http://localhost:5156
+    app.UseSwaggerUI(options => options.RoutePrefix = string.Empty);
 }
 
 
