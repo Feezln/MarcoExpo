@@ -38,7 +38,11 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwagger();
     //Swagger se muestra directo en http://localhost:5156
-    app.UseSwaggerUI(options => options.RoutePrefix = string.Empty);
+    app.UseSwaggerUI(options =>
+    {
+        options.SwaggerEndpoint("/swagger/v1/swagger.json", "TareasAPI v1");
+        options.RoutePrefix = string.Empty;
+    });
 }
 
 
