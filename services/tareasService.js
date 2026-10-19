@@ -1,25 +1,26 @@
 import client from '../api/client';
 
-export async function getTask(id) {
-  const res = await client.get(`/tareas/${id}`);
-  return res.data;
-}
+// Cada función llama a una ruta de la API (TareasAPI/Endpoints/TareasEndpoints.cs)
 
+// Get -> GET /api/tareas
 export async function getAllTasks() {
-  const res = await client.get('/tareas');
+  const res = await client.get('/api/tareas');
   return res.data;
 }
 
-export async function createTask(tarea) {
-    const res = await client.post('/tareas', tarea);
-    return res.data;
+// GetById -> GET /api/tareas/{id}
+export async function getTask(id) {
+  const res = await client.get(`/api/tareas/${id}`);
+  return res.data;
 }
 
-export async function deleteTask(id) {
-    const res = await client.delete(`/tareas/${id}`);
-    return res.data;
+// Crear -> POST /api/tareas
+export async function createTask(tarea) {
+  const res = await client.post('/api/tareas', tarea);
+  return res.data;
 }
-export async function updateTask(id, tarea) {
-    const res = await client.put(`/tareas/${id}`, tarea);
-    return res.data;
+
+// Eliminar -> DELETE /api/tareas/{id}
+export async function deleteTask(id) {
+  await client.delete(`/api/tareas/${id}`);
 }

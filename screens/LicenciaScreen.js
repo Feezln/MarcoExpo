@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Image, ActivityIndicator } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { getLicencia } from '../services/licenciaService';
 
 function InfoFila({ etiqueta, valor }) {
