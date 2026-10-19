@@ -21,17 +21,6 @@ public class TareaService : ITareaService
         return tarea;
     }
 
-    public bool Actualizar(int id, Tarea tarea)
-    {
-        var existente = ObtenerPorId(id);
-        if (existente is null) return false;
-        existente.Titulo = tarea.Titulo;
-        existente.Descripcion = tarea.Descripcion;
-        existente.Completada = tarea.Completada;
-
-        return true;
-    }
-
     public bool Eliminar(int id)
     {
         var existente = ObtenerPorId(id);

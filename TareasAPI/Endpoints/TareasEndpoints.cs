@@ -26,14 +26,6 @@ public static class TareasEndpoints{
            return Results.Created($"/api/tareas/{creada.Id}", creada); //201
         });
 
-        //Put /tareas/{id}
-        group.MapPut("/{id}", (ITareaService service, int id, Tarea tareaActualizada) =>
-        {
-            return service.Actualizar(id, tareaActualizada)
-                ? Results.NoContent()//204
-                : Results.NotFound(new {mensaje = "Tarea no encontrada"}); //404
-        });
-
         //Delete /tareas/{id}
         group.MapDelete("/{id}", (ITareaService service, int id) =>
         {
