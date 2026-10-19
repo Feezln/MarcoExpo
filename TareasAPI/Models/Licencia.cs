@@ -1,3 +1,5 @@
+namespace TareasAPI.Models;
+
 public class Licencia
 {
     public string Nombre { get; set; } = string.Empty;

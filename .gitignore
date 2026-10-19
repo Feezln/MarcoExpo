@@ -39,3 +39,12 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# .NET (TareasAPI)
+bin/
+obj/
+.vs/
+*.user
+
+# zips
+*.zip

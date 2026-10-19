@@ -26,6 +26,7 @@ builder.Services.AddCors(options =>
 //Nuestros Servicios 
 
 builder.Services.AddSingleton<ITareaService, TareaService>();
+builder.Services.AddSingleton<ILicenciaService, LicenciaService>();
 
 
 var app = builder.Build();
@@ -37,15 +38,23 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    //Al abrir http://localhost:5156 nos manda a Swagger
+    app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();
 }
 
 
 app.UseCors("AllowAll");
 
-app.UseHttpsRedirection();
+//En desarrollo usamos solo http para que la app de Expo pueda conectarse
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 //Endpoints
 app.MapTareaEndpoints();
+app.MapLicenciaEndpoints();
 
 
 app.Run();
