@@ -16,7 +16,8 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "package": "com.fayer1239.myappblank"
+      "package": "com.fayer1239.myappblank",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
