@@ -48,3 +48,10 @@ obj/
 
 # zips
 *.zip
+
+# Otro proyecto con su propio repositorio
+ProductosAPI/
+
+# Archivos locales
+.claude/
+*.pdf
